@@ -1,0 +1,21 @@
+{
+  "name": "@bernard/mem",
+  "version": "0.1.0",
+  "private": true,
+  "type": "module",
+  "engines": { "node": ">=22.19.0" },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" },
+    "./query": { "types": "./dist/query.d.ts", "import": "./dist/query.js" },
+    "./catalog": { "types": "./dist/catalog.d.ts", "import": "./dist/catalog.js" },
+    "./pi": "./adapters/pi.mjs",
+    "./mcp": "./adapters/mcp.mjs",
+    "./hooks": "./adapters/hooks.mjs"
+  },
+  "bin": { "bernard-mem": "./bin/bernard-mem.mjs" },
+  "files": ["dist", "bin", "adapters", "prompts"],
+  "scripts": { "build": "tsc -p tsconfig.json", "check": "tsc -p tsconfig.json --noEmit", "prepack": "npm run build" },
+  "devDependencies": { "@types/node": "^24.0.0", "typescript": "^5.9.0" }
+}

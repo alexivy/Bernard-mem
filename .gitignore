@@ -1,0 +1,8 @@
+node_modules/
+dist/
+.local/
+AGENTS.md
+*.sqlite
+*.sqlite-*
+.env
+config/
